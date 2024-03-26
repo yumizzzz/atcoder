@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  dev:
+    container_name: atcoder.dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    shm_size: '28gb'
+    volumes:
+      - type: bind
+        source: $PWD
+        target: /workspace
+    working_dir: /workspace
+    tty: true

@@ -1,0 +1,64 @@
+[tool.poetry]
+name = "atcoder"
+version = "0.1.0"
+description = ""
+authors = ["yumizu"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<3.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.19.4"
+ruff = "^0.2.1"
+mypy = "^0.991"
+pytest = "^7.2.0"
+mdformat-gfm = "^0.3.5"
+mdformat-frontmatter = "^2.0.1"
+mdformat_footnote = "^0.1.1"
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+line-length = 119
+indent-width = 4
+
+[tool.ruff.lint]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint.isort]
+
+[tool.mypy]
+ignore_missing_imports = true
