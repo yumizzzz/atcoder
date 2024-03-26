@@ -12,7 +12,7 @@ for t, x, y in zip(T, X, Y):
     if abs(x - pre_x) + abs(y - pre_y) > t - pre_t:
         print("No")
         exit()
-    elif (x + y) % 2 != t % 2:
+    elif (x - pre_x + y - pre_y) % 2 != (t - pre_t) % 2:
         print("No")
         exit()
     else:
