@@ -7,5 +7,4 @@
 ## Pythonで書かれた記事
 
 - [初中級者が解くべき過去問精選 100 問を解いてみた](https://qiita.com/rudorufu1981/items/8ae8beeba7b047f2687c)
-- [yYy雑記ブログ](https://yayakona.blog/python/kakomon-seiren-100-zentansaku-zenrekyo/)
 - [機械学習エンジニアの技術メモ](https://kakedashi-engineer.appspot.com/2020/05/08/light-blue/)
