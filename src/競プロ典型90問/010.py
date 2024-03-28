@@ -1,8 +1,8 @@
 N = int(input())
 
 # 1組, 2組で分けて得点を格納する
-c1 = [] * N
-c2 = [] * N
+c1 = [0] * N
+c2 = [0] * N
 for i in range(N):
     c, p = map(int, input().split())
     if c == 1:
