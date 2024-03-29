@@ -31,6 +31,10 @@ print(*A)
 # 空白区切りで出力
 print("a", end=" ")
 
+# 高速文字変換
+d = {"a": "A", "b": "B"}
+S.translate(str.maketrans(d))
+
 # 便利関数---------------------------------
 
 import math
@@ -40,6 +44,8 @@ from collections import Counter
 S = "aaabbc"
 S.count("a")
 # 3
+s_count = Counter(S)
+# Counter({'a': 3, 'b': 2, 'c': 1})
 
 # 組合せの数を計算. 以下5C2の場合
 math.comb(5, 2)
