@@ -1,7 +1,4 @@
 N = int(input())
-D = []
-for n in range(N):
-    d = int(input())
-    D.append(d)
+A = [int(input()) for _ in range(N)]
 
-print(len(set(D)))
+print(len(set(A)))

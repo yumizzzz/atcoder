@@ -19,6 +19,10 @@ A, B = map(int, input().split())
 N = int(input())
 A = list(map(int, input().split()))
 
+# N個の整数を受け取るとき
+N = int(input())
+A = [int(input()) for _ in range(N)]
+
 # 行列の入力
 N = int(input())
 A = [list(map(int, input().split())) for _ in range(N)]
@@ -49,3 +53,9 @@ s_count = Counter(S)
 
 # 組合せの数を計算. 以下5C2の場合
 math.comb(5, 2)
+
+
+from itertools import combinations
+
+# 組合せの列挙
+combinations(A, 2)
