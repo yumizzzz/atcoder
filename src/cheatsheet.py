@@ -1,8 +1,12 @@
+import math
 import sys
+from bisect import bisect_left, bisect_right
+from collections import Counter
+from itertools import combinations, product
 
 input = sys.stdin.readline
 
-# 入力-------------------------------------
+# 入力-------------------------------------------------------------------
 
 # 文字列/整数の入力
 S = str(input())
@@ -27,7 +31,7 @@ A = [int(input()) for _ in range(N)]
 N = int(input())
 A = [list(map(int, input().split())) for _ in range(N)]
 
-# 便利文法---------------------------------
+# 便利文法----------------------------------------------------------------
 
 # リストの要素をスペース区切りで出力
 print(*A)
@@ -39,23 +43,44 @@ print("a", end=" ")
 d = {"a": "A", "b": "B"}
 S.translate(str.maketrans(d))
 
-# 便利関数---------------------------------
-
-import math
-from collections import Counter
-
 # 文字数カウント
 S = "aaabbc"
-S.count("a")
-# 3
-s_count = Counter(S)
-# Counter({'a': 3, 'b': 2, 'c': 1})
+S.count("a")  # 3
+s_count = Counter(S)  # Counter({'a': 3, 'b': 2, 'c': 1})
+
+# 順列/組合せ ------------------------------------------------------------
 
 # 組合せの数を計算. 以下5C2の場合
 math.comb(5, 2)
 
-
-from itertools import combinations
-
 # 組合せの列挙
 combinations(A, 2)
+
+# 探索 -------------------------------------------------------------------
+
+# bit全探索. 直積集合
+product([0, 1], repeat=3)  # (0, 0, 0), (0, 0, 1), (0, 1, 0), ...
+
+# 二分探索
+# https://amateur-engineer-blog.com/python-bisect
+A.sort()
+bisect_left(A, N)  # Nが挿入できる最初のindex
+bisect_right(A, N)  # Nが挿入できる最後のindex
+
+
+# 進数変換 ---------------------------------------------------------------
+def from_n_to_10(number: str | int, n: int) -> int:
+    """numberをbase進法から10進法に変換"""
+    return int(str(number), n)
+
+
+def from_10_to_n(number: str | int, n: int) -> int:
+    """10進法をn進法に変換"""
+    number = int(number)
+    if number == 0:
+        return 0
+    new_number = ""
+    while number > 0:
+        new_number += str(number % n)
+        number //= n
+    return int(new_number[::-1])
