@@ -5,6 +5,8 @@ A = list(map(int, input().split()))
 Q = int(input())
 B = [int(input()) for _ in range(Q)]
 
+# 二分探索
+
 A.sort()
 
 for b in B:

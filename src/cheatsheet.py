@@ -23,7 +23,7 @@ A, B = map(int, input().split())
 N = int(input())
 A = list(map(int, input().split()))
 
-# N個の整数を受け取るとき
+# 縦方向に並んだN個の整数を受け取るとき
 N = int(input())
 A = [int(input()) for _ in range(N)]
 
@@ -47,6 +47,13 @@ S.translate(str.maketrans(d))
 S = "aaabbc"
 S.count("a")  # 3
 s_count = Counter(S)  # Counter({'a': 3, 'b': 2, 'c': 1})
+
+# 最小公約数
+math.gcd(4, 6)
+# 最小公倍数
+math.lcm(4, 6)
+# 備忘: 元の2数の積は最小公倍数と最大公約数の積に等しい
+# 感覚的には → https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10199287735
 
 # 順列/組合せ ------------------------------------------------------------
 
