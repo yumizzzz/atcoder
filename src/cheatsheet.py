@@ -1,3 +1,4 @@
+import itertools
 import math
 import sys
 from bisect import bisect_left, bisect_right
@@ -54,6 +55,9 @@ math.gcd(4, 6)
 math.lcm(4, 6)
 # 備忘: 元の2数の積は最小公倍数と最大公約数の積に等しい
 # 感覚的には → https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10199287735
+
+# 累積和
+list(itertools.accumulate(A))
 
 # 順列/組合せ ------------------------------------------------------------
 
