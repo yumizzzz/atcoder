@@ -98,3 +98,15 @@ def from_10_to_n(number: str | int, n: int) -> int:
         new_number += str(number % n)
         number //= n
     return int(new_number[::-1])
+
+
+# ランレングス圧縮 ---------------------------------------------------------
+def runLengthEncode(S: str) -> list[tuple[str, int]]:
+    """ランレングス圧縮. "aabbbbaac" -> [('a', 2), ('b', 4), ('a', 2), ('c', 1)]"""
+    from itertools import groupby
+
+    grouped = groupby(S)
+    res = []
+    for k, v in grouped:
+        res.append((k, int(len(list(v)))))
+    return res
