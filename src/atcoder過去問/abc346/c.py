@@ -1,9 +1,15 @@
+"""
+Kの数が大きいため, for文で全探索して合計を求めるとTLEになる
+なので数式を使ってまずは全合計を出し, 数が少ないAの数でfor分を回して引いていく
+"""
+
 N, K = map(int, input().split())
 A = list(map(int, input().split()))
 
-sum_k = (K * (K + 1)) // 2
+all_sum = K * (K + 1) // 2
 
-A = set(A)
-sum_a = sum([a for a in A if a <= K])
+for a in set(A):
+    if a <= K:
+        all_sum -= a
 
-print(sum_k - sum_a)
+print(all_sum)
