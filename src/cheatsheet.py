@@ -113,3 +113,11 @@ def runLengthEncode(S: str) -> list[tuple[str, int]]:
     for k, v in grouped:
         res.append((k, int(len(list(v)))))
     return res
+
+
+# 切り捨て除算 -----------------------------------------------------------
+def divide_round_down(a: int, b: int) -> int:
+    """切り捨て除算
+    https://atcoder.jp/contests/abc345/editorial
+    """
+    return (a + b - 1) // b

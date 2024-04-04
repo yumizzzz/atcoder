@@ -1,12 +1,10 @@
 S = str(input())
 
-if S[0] != "<" or S[-1] != ">":
+if S[0] != "<":
     print("No")
-    exit()
-
-for s in S[1:-1]:
-    if s != "=":
-        print("No")
-        exit()
-
-print("Yes")
+elif S[-1] != ">":
+    print("No")
+elif S[1:-1].count("=") != len(S[1:-1]):
+    print("No")
+else:
+    print("Yes")
