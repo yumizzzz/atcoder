@@ -32,6 +32,11 @@ A = [int(input()) for _ in range(N)]
 N = int(input())
 A = [list(map(int, input().split())) for _ in range(N)]
 
+# H行W列の行列を受け取る
+H, W = map(int, input().split())
+A = [["." for _ in range(W)] for _ in range(H)]
+
+
 # 便利文法----------------------------------------------------------------
 
 # リストの要素をスペース区切りで出力
