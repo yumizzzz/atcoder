@@ -32,9 +32,17 @@ A = [int(input()) for _ in range(N)]
 N = int(input())
 A = [list(map(int, input().split())) for _ in range(N)]
 
+# 行列を分けて受け取る
+N = int(input())
+A, B = [], []
+for i in range(N):
+    a, b = map(int, input().split())
+    A.append(a)
+    B.append(b)
+
 # H行W列の行列を受け取る
 H, W = map(int, input().split())
-A = [["." for _ in range(W)] for _ in range(H)]
+A = [["."] * W for _ in range(H)]
 
 
 # 便利文法----------------------------------------------------------------
