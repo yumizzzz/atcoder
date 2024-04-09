@@ -1,9 +1,9 @@
-N = int(input())
+S = str(input())
 
-data = []
-for _ in range(N):
-    s, t = map(str, input().split())
-    data.append([int(t), s])
+S = S[::-1]
 
-data.sort()
-print(data[-2][1])
+# 以下の方法だと一気に変換できる
+d = {"6": "9", "9": "6"}
+S = S.translate(str.maketrans(d))
+
+print(S)

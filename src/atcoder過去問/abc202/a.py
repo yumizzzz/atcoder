@@ -1,6 +1,3 @@
-S = str(input())
+a, b, c = map(int, input().split())
 
-d = {"0": "0", "1": "1", "6": "9", "8": "8", "9": "6"}
-
-S = S[::-1]
-print(S.translate(str.maketrans(d)))
+print(21 - a - b - c)

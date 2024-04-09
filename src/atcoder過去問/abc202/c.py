@@ -9,11 +9,11 @@ C = list(map(int, input().split()))
 A_counter = Counter(A)
 C_counter = Counter(C)
 
-count = 0
+# bを軸にしてaとcの数を数える
+ans = 0
 for i in range(N):
     a_count = A_counter[B[i]]
-    if a_count == 0:
-        continue
-    count += C_counter[i + 1] * a_count
+    c_count = C_counter[i + 1]
+    ans += a_count * c_count
 
-print(count)
+print(ans)
