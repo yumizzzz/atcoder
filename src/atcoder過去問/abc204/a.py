@@ -1,10 +1,6 @@
-a, b = map(str, input().split())
+x, y = map(int, input().split())
 
-ls = ["0", "1", "2"]
-
-if a == b:
-    print(a)
+if x == y:
+    print(x)
 else:
-    ls.remove(a)
-    ls.remove(b)
-    print(ls[0])
+    print(3 - x - y)
