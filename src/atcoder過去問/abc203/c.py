@@ -1,19 +1,25 @@
-from collections import Counter
+from collections import defaultdict
 
-N = int(input())
-A = list(map(int, input().split()))
-B = list(map(int, input().split()))
-C = list(map(int, input().split()))
-
-# forループの中でcountをしない. countはo(n)操作なので
-A_counter = Counter(A)
-C_counter = Counter(C)
-
-count = 0
+N, K = map(int, input().split())
+A, B = [], []
 for i in range(N):
-    a_count = A_counter[B[i]]
-    if a_count == 0:
-        continue
-    count += C_counter[i + 1] * a_count
+    a, b = map(int, input().split())
+    A.append(a)
+    B.append(b)
 
-print(count)
+d = defaultdict(int)
+for i in range(N):
+    d[A[i]] += B[i]
+
+
+ans = 0
+for i, v in sorted(d.items()):
+    if K - (i - ans) < 0:
+        print(K + ans)
+        exit()
+
+    K -= i - ans
+    K += v
+    ans = i
+
+print(K + ans)

@@ -24,9 +24,7 @@ for a, b in combinations(range(N), 2):
     min1, max1 = get_min_max(tlr01)
     min2, max2 = get_min_max(tlr02)
 
-    if max1 < min2 or max2 < min1:
-        continue
-    else:
+    if max(min1, min2) <= min(max1, max2):
         count += 1
 
 print(count)
