@@ -40,7 +40,7 @@ for i in range(N):
     A.append(a)
     B.append(b)
 
-# H行W列の行列を受け取る
+# H行W列の行列を受け取る. indexは[行][列]
 H, W = map(int, input().split())
 A = [["."] * W for _ in range(H)]
 
