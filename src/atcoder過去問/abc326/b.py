@@ -1,10 +1,9 @@
 N = int(input())
+A = list(map(int, input().split()))
 
-for i in range(N, 920):
-    number100 = i // 100
-    number10 = (i % 100) // 10
-    number1 = i % 10
+ans = []
+for i in range(0, N - 1):
+    b = A[i] * A[i + 1]
+    ans.append(b)
 
-    if number100 * number10 == number1:
-        print(i)
-        break
+print(*ans)
